@@ -1,0 +1,22 @@
+
+.form{
+display:flex;
+flex-direction:column;
+
+background-color: rgb(59, 216, 67);   
+text-align: center; 
+justify-content: center;
+align-items:center;
+border-radius: 30px;
+}
+.form-label{
+color:white;
+font-size:large;
+}
+.form-control{
+    margin-left:10px;
+    margin-right:10px;
+}
+.bnt{
+width:300px ;   
+}

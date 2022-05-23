@@ -1,0 +1,22 @@
+<div class="form">
+  <form [formGroup]="formularioContacto" ngSubmit="submit()">
+    <div class="mb-5" >
+      <label for="exampleInputEmail1" class="form-label">User</label>
+      <input type="email" formControlName="usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <span *ngIf="formularioContacto.get('usuario')?.errors?.['required']">El campo usuario no puede quedar en blanco</span>
+      <span *ngIf="formularioContacto.get('usuario')?.errors?.['email']">El campo usuario debe ser un email</span>
+      <div id="emailHelp" class="form-text">El campo no puede quedar en blanco.</div>
+    </div>
+    <div class="mb-5" >
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" formControlName="contrasena" class="form-control" id="exampleInputPassword1">
+      <span *ngIf="formularioContacto.get('contrasena')?.errors?.['required']">El campo contraseña no puede quedar en blanco</span>
+      <span *ngIf="formularioContacto.get('contrasena')?.errors?.['minlength']">El campo contraseña debe tener un minimo de 4 caracteres</span>
+      <span *ngIf="formularioContacto.get('contrasena')?.errors?.['maxlength']">El campo contraseña maximo de 8 caracteres</span>
+      <div id="emailHelp" class="form-text">El campo no puede quedar en blanco.</div>
+      
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+  <div>{{formularioContacto.value | json}}</div>
+</div>
